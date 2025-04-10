@@ -7,6 +7,7 @@ buildscript {
         ndkVersion = "25.1.8937393"
         kotlinVersion = "1.8.0"
         RNJWPlayerUseGoogleIMA = true
+        RNJWPlayerUseGoogleCast = true
     }
     repositories {
         google()
@@ -20,8 +21,9 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
+}
 
-    allprojects {
+allprojects {
     repositories {
         mavenLocal()
         google()
@@ -30,7 +32,6 @@ buildscript {
             url 'https://mvn.jwplayer.com/content/repositories/releases/'
         }
     }
-}
 }
 
 apply plugin: "com.facebook.react.rootproject"

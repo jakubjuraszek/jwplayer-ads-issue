@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Enable Picture-in-Picture (PiP) -->
+    <uses-feature android:name="android.software.picture_in_picture" android:required="false" />
 
     <application
       android:name=".MainApplication"
@@ -9,13 +12,18 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <meta-data
+     android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+     android:value="com.jwplayer.CastOptionsProvider" />
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
         android:launchMode="singleTask"
         android:windowSoftInputMode="adjustResize"
-        android:exported="true">
+        android:exported="true"
+        android:supportsPictureInPicture="true"
+        android:resizeableActivity="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
